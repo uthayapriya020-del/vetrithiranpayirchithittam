@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>ComicCraft - AI Comic Generator</title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🎨 ComicCraft
+    </div>
+
+    <div class="nav-text">
+        AI Comic Story Generator
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <span class="badge">
+                ✨ AI Powered
+            </span>
+
+            <h1>
+                Create Your Own Comic
+            </h1>
+
+            <p>
+                Turn your story idea into a
+                personalized comic with AI-generated
+                storytelling and illustrations.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <section class="card">
+
+        <h2>
+            Create Your Comic
+        </h2>
+
+        <p class="description">
+            Enter your story details below.
+        </p>
+
+
+        <form
+            id="comicForm"
+            action="/generate"
+            method="POST"
+        >
+
+            <div class="form-group">
+
+                <label for="story_prompt">
+                    Story Idea
+                </label>
+
+                <textarea
+                    id="story_prompt"
+                    name="story_prompt"
+                    placeholder="Example: A young scientist discovers a mysterious portal..."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-grid">
+
+                <div class="form-group">
+
+                    <label for="character_name">
+                        Character Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="character_name"
+                        name="character_name"
+                        value="Alex"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="setting">
+                        Setting
+                    </label>
+
+                    <input
+                        type="text"
+                        id="setting"
+                        name="setting"
+                        value="A futuristic city"
+                    >
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="tone">
+                        Tone
+                    </label>
+
+                    <select
+                        id="tone"
+                        name="tone"
+                    >
+
+                        <option>
+                            Adventure
+                        </option>
+
+                        <option>
+                            Comedy
+                        </option>
+
+                        <option>
+                            Mystery
+                        </option>
+
+                        <option>
+                            Fantasy
+                        </option>
+
+                        <option>
+                            Science Fiction
+                        </option>
+
+                        <option>
+                            Drama
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="art_style">
+                        Art Style
+                    </label>
+
+                    <select
+                        id="art_style"
+                        name="art_style"
+                    >
+
+                        <option>
+                            Comic book
+                        </option>
+
+                        <option>
+                            Manga
+                        </option>
+
+                        <option>
+                            Cartoon
+                        </option>
+
+                        <option>
+                            Digital art
+                        </option>
+
+                        <option>
+                            Watercolor
+                        </option>
+
+                        <option>
+                            Cinematic
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button
+                type="submit"
+                id="generateButton"
+                class="primary-button"
+            >
+
+                <span id="buttonText">
+                    🚀 Generate My Comic
+                </span>
+
+                <span
+                    id="loadingText"
+                    style="display:none;"
+                >
+                    ⏳ Creating your comic...
+                </span>
+
+            </button>
+
+        </form>
+
+    </section>
+
+
+    <section class="features">
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                ✍️
+            </div>
+
+            <h3>
+                AI Story
+            </h3>
+
+            <p>
+                Gemini creates a structured comic story
+                from your idea.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                🎨
+            </div>
+
+            <h3>
+                AI Illustrations
+            </h3>
+
+            <p>
+                Generate illustrations for each comic
+                panel.
+            </p>
+
+        </div>
+
+
+        <div class="feature-card">
+
+            <div class="feature-icon">
+                📄
+            </div>
+
+            <h3>
+                PDF Export
+            </h3>
+
+            <p>
+                Download your completed comic as a PDF.
+            </p>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 ComicCraft | AI Comic Generator
+    </p>
+
+</footer>
+
+
+<script src="/static/js/app.js"></script>
+
+</body>
+
+</html>

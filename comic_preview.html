@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>
+        {{ comic.title }} - ComicCraft
+    </title>
+
+    <link
+        rel="stylesheet"
+        href="/static/css/style.css"
+    >
+
+</head>
+
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        🎨 ComicCraft
+    </div>
+
+    <a
+        href="/"
+        class="nav-button"
+    >
+        Create New
+    </a>
+
+</header>
+
+
+<main class="container">
+
+    <section class="comic-header">
+
+        <span class="badge">
+            ✨ Your Comic Is Ready
+        </span>
+
+        <h1>
+            {{ comic.title }}
+        </h1>
+
+        <p>
+            Your AI-generated five-panel comic
+        </p>
+
+    </section>
+
+
+    <section class="comic-grid">
+
+        {% for panel in comic.panels %}
+
+        <article class="comic-panel">
+
+            <div class="panel-number">
+                Panel {{ panel.panel_number }}
+            </div>
+
+
+            {% if panel.image %}
+
+            <img
+                src="{{ panel.image }}"
+                alt="Comic Panel {{ panel.panel_number }}"
+                class="panel-image"
+            >
+
+            {% endif %}
+
+
+            <div class="panel-content">
+
+                {% if panel.narration %}
+
+                <div class="narration">
+
+                    <strong>
+                        Narration:
+                    </strong>
+
+                    {{ panel.narration }}
+
+                </div>
+
+                {% endif %}
+
+
+                {% if panel.dialogue %}
+
+                <div class="dialogue">
+
+                    <strong>
+                        Dialogue:
+                    </strong>
+
+                    "{{ panel.dialogue }}"
+
+                </div>
+
+                {% endif %}
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </section>
+
+
+    <section class="export-card">
+
+        <h2>
+            📄 Export Your Comic
+        </h2>
+
+        <p>
+            Download all panels as a PDF.
+        </p>
+
+        {% if comic.pdf_url %}
+
+        <a
+            href="{{ comic.pdf_url }}"
+            target="_blank"
+            class="primary-button download-button"
+        >
+            ⬇️ Download PDF
+        </a>
+
+        {% endif %}
+
+        <a
+            href="/"
+            class="secondary-button"
+        >
+            Create Another Comic
+        </a>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <p>
+        © 2026 ComicCraft
+    </p>
+
+</footer>
+
+</body>
+
+</html>
